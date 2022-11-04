@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="tpl/default :: htmlhead"/>
+<body>
+
+<div class="container-fluid">
+        <div class="col-3 m-auto pt-5">
+            <h2>Please sign in</h2>
+            <form class="form" method="post" th:action="@{/login}">
+                <input type="email" class="form-control mb-2 form-control-lg" name="email" placeholder="Email address">
+                <input type="password" class="form-control  mb-2 form-control-lg" name="password" value="" placeholder="Password">
+                <button class="btn btn-primary btn-lg mt-2 btn-block">Sign in</button>
+            </form>
+        </div>
+
+<footer th:replace="tpl/default :: htmlfooter"/>
+
+    <style>
+        html,body {height: 100%; background: #fafafa}
+        .container-fluid {    height: 100%; display: flex; flex-direction: column;}
+    </style>
+
+</div>
+</body>
+</html>
