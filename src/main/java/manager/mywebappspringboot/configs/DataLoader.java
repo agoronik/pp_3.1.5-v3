@@ -5,6 +5,7 @@ import manager.mywebappspringboot.model.User;
 import manager.mywebappspringboot.repository.RoleRepository;
 import manager.mywebappspringboot.repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.util.HashSet;
