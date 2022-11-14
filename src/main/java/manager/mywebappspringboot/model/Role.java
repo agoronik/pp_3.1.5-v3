@@ -1,5 +1,6 @@
 package manager.mywebappspringboot.model;
 
+import lombok.AllArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
@@ -16,7 +17,6 @@ public class Role implements GrantedAuthority {
     private String name;
 
     @Transient
-    @ManyToMany(mappedBy = "roles", fetch = FetchType.LAZY)
     private Set<User> users;
 
     public Role() {
