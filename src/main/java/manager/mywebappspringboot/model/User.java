@@ -1,15 +1,13 @@
 package manager.mywebappspringboot.model;
 
-import lombok.AllArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.persistence.*;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.Set;
-@AllArgsConstructor
+
 @Entity
 @Table(name = "users")
 public class User implements UserDetails {

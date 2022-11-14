@@ -1,9 +1,7 @@
 package manager.mywebappspringboot.service;
 
 import manager.mywebappspringboot.model.Role;
-import manager.mywebappspringboot.model.User;
 import manager.mywebappspringboot.repository.RoleRepository;
-import manager.mywebappspringboot.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
