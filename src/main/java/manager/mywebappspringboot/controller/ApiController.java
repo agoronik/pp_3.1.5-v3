@@ -4,6 +4,7 @@ import manager.mywebappspringboot.model.User;
 import manager.mywebappspringboot.repository.RoleRepository;
 import manager.mywebappspringboot.repository.UserRepository;
 import manager.mywebappspringboot.service.UserService;
+import manager.mywebappspringboot.service.UserServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -20,7 +21,7 @@ public class ApiController {
     @Autowired
     private UserRepository userRepository;
     @Autowired
-    private UserService userService;
+    private UserServiceImp userService;
     @Autowired
     private RoleRepository roleRepository;
 
@@ -52,15 +53,14 @@ public class ApiController {
     @ResponseBody
     public String saveUser(@Validated @RequestBody User user, @PathVariable(value = "id") long id) {
         user.setId(id);
-        userRepository.save(user);
+        userService.updateUser(user);
         return "ok";
     }
 
     @PostMapping("")
     @ResponseBody
     public ResponseEntity newUser(@Validated @RequestBody User user) {
-        userRepository.save(user);
-        //return "ok";
+        userService.createUser(user);
         return ResponseEntity.ok("User is valid");
     }
 }

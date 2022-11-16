@@ -37,13 +37,15 @@ public class User implements UserDetails {
             inverseJoinColumns = {@JoinColumn(name = "roles_id", referencedColumnName = "id")})
     private Set<Role> roles;
 
-    public User() {}
+    public User() {
+    }
 
-    public User(String firstName, String lastName, int age, String email) {
+    public User(String firstName, String lastName, int age, String email, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.email = email;
+        this.password = password;
     }
 
     public Long getId() {
@@ -102,8 +104,7 @@ public class User implements UserDetails {
     }
 
     public void setPassword(String password) {
-        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        this.password = passwordEncoder.encode(password);
+        this.password = password;
     }
 
     public Set<Role> getRoles() {
